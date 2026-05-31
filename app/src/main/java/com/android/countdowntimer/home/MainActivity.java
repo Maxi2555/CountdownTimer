@@ -644,19 +644,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_show_completed_events:
-                showCompletedEvents();
-                return true;
-            case R.id.action_export_events:
-                exportEventsToJson();
-                return true;
-            case R.id.action_sync_calendars:
-                requestCalendarPermissionThenShowPicker();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int itemId = item.getItemId();
+        if (itemId == R.id.action_show_completed_events) {
+            showCompletedEvents();
+            return true;
         }
+        if (itemId == R.id.action_export_events) {
+            exportEventsToJson();
+            return true;
+        }
+        if (itemId == R.id.action_sync_calendars) {
+            requestCalendarPermissionThenShowPicker();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void exportEventsToJson() {
