@@ -52,7 +52,14 @@ public class EventTouchHelperCallback extends ItemTouchHelper.Callback {
 
     public int getSlideLimitation(RecyclerView.ViewHolder viewHolder) {
         ViewGroup viewGroup = (ViewGroup) viewHolder.itemView;
-        return viewGroup.getChildAt(2).getLayoutParams().width;
+        int minWidth = Integer.MAX_VALUE;
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            int width = viewGroup.getChildAt(i).getLayoutParams().width;
+            if (width > 0 && width < minWidth) {
+                minWidth = width;
+            }
+        }
+        return minWidth == Integer.MAX_VALUE ? viewGroup.getWidth() / 3 : minWidth;
     }
 
     @Override
