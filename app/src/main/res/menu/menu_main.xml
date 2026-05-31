@@ -4,14 +4,16 @@
     tools:context="com.android.countdowntimer.home.MainActivity">
     <item
         android:id="@+id/action_show_completed_events"
-        android:name="@string/show_completed_events"
         android:icon="@drawable/ic_history"
         android:title="@string/show_completed_events"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_export_events"
-        android:name="@string/export_to_json"
         android:icon="@drawable/ic_export"
         android:title="@string/export_to_json"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_sync_calendars"
+        android:title="@string/sync_calendars"
+        app:showAsAction="never" />
 </menu>

@@ -33,12 +33,32 @@ public class Event {
 
     private long mCreationDate;
 
+    @Nullable
+    private String mImageUri;
+
+    @Nullable
+    private String mSource;
+
+    @Nullable
+    private String mSourceCalendarId;
+
+    @Nullable
+    private String mSourceEventId;
+
+    private boolean mExternalEvent;
+
+    private boolean mNowBarEnabled;
+
     //Use this constructor to create a new active Event.
     public Event(@Nullable String title, @Nullable String note, long startDate, long endDate, int state, boolean durableEvent, int priority, int reminder, String category) {
-        this(title, note, startDate, endDate, state, durableEvent, priority, UUID.randomUUID().toString(), reminder, category, System.currentTimeMillis());
+        this(title, note, startDate, endDate, state, durableEvent, priority, UUID.randomUUID().toString(), reminder, category, System.currentTimeMillis(), null, null, null, null, false, false);
     }
 
     public Event(@Nullable String title, @Nullable String note, long startDate, long endDate, int state, boolean durableEvent, int priority, String id, int reminder, String category, long creationDate) {
+        this(title, note, startDate, endDate, state, durableEvent, priority, id, reminder, category, creationDate, null, null, null, null, false, false);
+    }
+
+    public Event(@Nullable String title, @Nullable String note, long startDate, long endDate, int state, boolean durableEvent, int priority, String id, int reminder, String category, long creationDate, @Nullable String imageUri, @Nullable String source, @Nullable String sourceCalendarId, @Nullable String sourceEventId, boolean externalEvent, boolean nowBarEnabled) {
         mId = id;
         mCreationDate = creationDate;
         mTitle = title;
@@ -50,6 +70,12 @@ public class Event {
         mPriority = priority;
         mReminder = reminder;
         mCategory = category;
+        mImageUri = imageUri;
+        mSource = source;
+        mSourceCalendarId = sourceCalendarId;
+        mSourceEventId = sourceEventId;
+        mExternalEvent = externalEvent;
+        mNowBarEnabled = nowBarEnabled;
     }
 
     @NonNull
@@ -97,5 +123,65 @@ public class Event {
 
     public String getCategory() {
         return mCategory;
+    }
+
+    @Nullable
+    public String getImageUri() {
+        return mImageUri;
+    }
+
+    @Nullable
+    public String getSource() {
+        return mSource;
+    }
+
+    @Nullable
+    public String getSourceCalendarId() {
+        return mSourceCalendarId;
+    }
+
+    @Nullable
+    public String getSourceEventId() {
+        return mSourceEventId;
+    }
+
+    public boolean isExternalEvent() {
+        return mExternalEvent;
+    }
+
+    public boolean isNowBarEnabled() {
+        return mNowBarEnabled;
+    }
+
+    public void setTitle(@Nullable String title) {
+        mTitle = title;
+    }
+
+    public void setEndDate(long endDate) {
+        mEndDate = endDate;
+    }
+
+    public void setImageUri(@Nullable String imageUri) {
+        mImageUri = imageUri;
+    }
+
+    public void setSource(@Nullable String source) {
+        mSource = source;
+    }
+
+    public void setSourceCalendarId(@Nullable String sourceCalendarId) {
+        mSourceCalendarId = sourceCalendarId;
+    }
+
+    public void setSourceEventId(@Nullable String sourceEventId) {
+        mSourceEventId = sourceEventId;
+    }
+
+    public void setExternalEvent(boolean externalEvent) {
+        mExternalEvent = externalEvent;
+    }
+
+    public void setNowBarEnabled(boolean nowBarEnabled) {
+        mNowBarEnabled = nowBarEnabled;
     }
 }

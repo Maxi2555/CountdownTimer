@@ -1,13 +1,10 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/teal_700</item>
-        <item name="colorPrimaryDark">@color/teal_800</item>
-        <item name="colorAccent">@color/yellow_800</item>
+    <style name="AppTheme" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorSecondary">@color/colorAccent</item>
         <item name="android:colorBackground">@color/white</item>
-        <item name="android:windowTranslucentStatus">false</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -19,10 +16,13 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="DatePickerDialog" parent="Base.Theme.MaterialComponents.Light.Dialog">
-        <item name="colorAccent">@color/yellow_800</item>
-        <item name="colorPrimaryDark">@color/teal_800</item>
-        <item name="colorPrimary">@color/teal_700</item>
+    <style name="DatePickerDialog" parent="Theme.Material3.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
     <style name="DialogAnimation">

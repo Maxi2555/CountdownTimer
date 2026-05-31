@@ -5,18 +5,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
 import com.android.countdowntimer.R;
-import com.android.countdowntimer.detail.EventDetailActivity;
 import com.android.countdowntimer.home.Event;
 import com.android.countdowntimer.home.EventItemActionListener;
 import com.android.countdowntimer.home.EventTouchHelperCallback;
-import com.android.countdowntimer.home.EventsAdapter;
-import com.android.countdowntimer.home.MainActivity;
 import com.android.countdowntimer.utils.Utils;
 
 import java.util.ArrayList;
